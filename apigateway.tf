@@ -152,9 +152,6 @@ resource "aws_api_gateway_deployment" "prod" {
   rest_api_id = "${aws_api_gateway_rest_api.sftp-idp-secrets.id}"
   stage_name  = ""
   depends_on = ["aws_api_gateway_integration.sftp-idp-secrets-integration"]
-  variables = {
-    deployed_at = "${timestamp()}"
-  }
 }
 
 resource "aws_api_gateway_stage" "prod" {
